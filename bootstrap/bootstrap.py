@@ -82,27 +82,27 @@ class Helper:
 def replace_project_name(project_dir, project_name, rename_name):
     # Replace instances of rename_name within files with project_name
     files = [r".env.example",
-            r".pipelines/code-quality-template.yml",
-            r".pipelines/pr.yml",
-            r".pipelines/diabetes_regression-cd.yml",
-            r".pipelines/diabetes_regression-ci.yml",
-            r".pipelines/abtest.yml",
-            r".pipelines/diabetes_regression-ci-image.yml",
-            r".pipelines/diabetes_regression-publish-model-artifact-template.yml",  # NOQA: E501
-            r".pipelines/diabetes_regression-get-model-id-artifact-template.yml",  # NOQA: E501
-            r".pipelines/diabetes_regression-batchscoring-ci.yml",
-            r".pipelines/diabetes_regression-variables-template.yml",
-            r"environment_setup/Dockerfile",
-            r"environment_setup/install_requirements.sh",
-            r"ml_service/pipelines/diabetes_regression_build_parallel_batchscore_pipeline.py",  # NOQA: E501
-            r"ml_service/pipelines/diabetes_regression_build_train_pipeline_with_r_on_dbricks.py",  # NOQA: E501
-            r"ml_service/pipelines/diabetes_regression_build_train_pipeline_with_r.py",  # NOQA: E501
-            r"ml_service/pipelines/diabetes_regression_build_train_pipeline.py",  # NOQA: E501
-            r"ml_service/util/create_scoring_image.py",
-            r"diabetes_regression/conda_dependencies.yml",
-            r"diabetes_regression/evaluate/evaluate_model.py",
-            r"diabetes_regression/register/register_model.py",
-            r"diabetes_regression/training/test_train.py"]
+             r".pipelines/code-quality-template.yml",
+             r".pipelines/pr.yml",
+             r".pipelines/diabetes_regression-cd.yml",
+             r".pipelines/diabetes_regression-ci.yml",
+             r".pipelines/abtest.yml",
+             r".pipelines/diabetes_regression-ci-image.yml",
+             r".pipelines/diabetes_regression-publish-model-artifact-template.yml",  # NOQA: E501
+             r".pipelines/diabetes_regression-get-model-id-artifact-template.yml",  # NOQA: E501
+             r".pipelines/diabetes_regression-batchscoring-ci.yml",
+             r".pipelines/diabetes_regression-variables-template.yml",
+             r"environment_setup/Dockerfile",
+             r"environment_setup/install_requirements.sh",
+             r"ml_service/pipelines/diabetes_regression_build_parallel_batchscore_pipeline.py",  # NOQA: E501
+             r"ml_service/pipelines/diabetes_regression_build_train_pipeline_with_r_on_dbricks.py",  # NOQA: E501
+             r"ml_service/pipelines/diabetes_regression_build_train_pipeline_with_r.py",  # NOQA: E501
+             r"ml_service/pipelines/diabetes_regression_build_train_pipeline.py",  # NOQA: E501
+             r"ml_service/util/create_scoring_image.py",
+             r"diabetes_regression/conda_dependencies.yml",
+             r"diabetes_regression/evaluate/evaluate_model.py",
+             r"diabetes_regression/register/register_model.py",
+             r"diabetes_regression/training/test_train.py"]
 
     for file in files:
         path = os.path.join(project_dir, os.path.normpath(file))
