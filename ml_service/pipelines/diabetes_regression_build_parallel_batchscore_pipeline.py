@@ -145,8 +145,7 @@ def get_fallback_input_dataset(ws: Workspace, env: Env) -> Dataset:
 
     if not os.path.exists(env.scoring_datastore_input_filename):
         error_message = (
-            "Could not find CSV dataset for scoring at {}. "
-            + "No alternate data store location was provided either.".format(
+            "Could not find CSV dataset for scoring at {}. No alternate data store location was provided either.".format(  # NOQA: E501
                 env.scoring_datastore_input_filename
             )  # NOQA: E501
         )

@@ -11,7 +11,7 @@ from train import split_data, train_model, get_model_metrics
 
 # Get the output folder for the model from the '--output_folder' parameter
 parser = argparse.ArgumentParser()
-parser.add_argument('--output_folder', type=str, dest='output_folder', default="outputs")
+parser.add_argument('--output_folder', type=str, dest='output_folder', default="outputs")  # NOQA: E501
 args = parser.parse_args()
 output_folder = args.output_folder
 
@@ -29,13 +29,13 @@ with open("parameters.json") as f:
 # Log each of the parameters to the run
 for param_name, param_value in parameters.items():
     run.log(param_name, param_value)
-    
-# Use the functions imported from train.py to prepare data, train the model, and calculate the metrics
-## TODO
+
+# Use the functions imported from train.py to prepare data, train the model, and calculate the metrics # NOQA: E501
+# TODO
 data = split_data(train_df)
 
 model = train_model(data, parameters)
-predictions = get_model_metrics(model,data)
+predictions = get_model_metrics(model, data)
 
 run.log('Accuracy', predictions)
 run.log('auc', predictions['auc'])
