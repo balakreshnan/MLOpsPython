@@ -109,3 +109,4 @@ condaenv.*
 .mypy_cache/
 
 .DS_Store
+*.csv
