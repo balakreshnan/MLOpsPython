@@ -31,6 +31,8 @@ dependencies:
 
       # Training deps
       - scikit-learn
+      - lightgbm
+      - pandas
 
       # Scoring deps
       - inference-schema[numpy-support]
