@@ -1,7 +1,0 @@
-[    
-    {
-      "pypi": {
-        "package": "azureml-sdk[databricks]==1.0.45"
-      }
-    }
-]

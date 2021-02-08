@@ -110,6 +110,3 @@ condaenv.*
 
 .DS_Store
 *.csv
-
-# Students folder to ignote
-students/
