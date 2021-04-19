@@ -1,0 +1,33 @@
+# Continuous Integration (CI) pipeline that orchestrates the deployment of the diabetes_regression model.
+
+# Runtime parameters to select artifacts
+parameters:
+- name : artifactBuildId
+  displayName: Model Train CI Build ID. Default is 'latest'.
+  type: string
+  default: latest
+
+pr: none
+
+variables:
+- template: diabetes_regression-variables-template.yml
+- group: devopsforai-aml-vg
+
+
+stages:
+- stage: 'Deploy_ACI'
+  displayName: 'Deploy to ACI'
+  condition: variables['ACI_DEPLOYMENT_NAME']
+  pipelines:
+  - pipeline: model-train-ci
+    source: Model-Train-Register-CI # Name of the triggering pipeline
+    trigger:
+      branches:
+        include:
+        - master
+  - pipeline: model-train-cd
+    source: Model-Train-CD # Name of the triggering pipeline
+    trigger:
+      branches:
+        include:
+        - master
