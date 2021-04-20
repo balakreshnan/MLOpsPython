@@ -116,7 +116,9 @@ stages:
     - download: none
     - template: diabetes_regression-get-model-id-artifact-template.yml
       parameters:
-        projectId: '$(AMLPIPELINE_ID)'
+        # projectId: '$(AMLPIPELINE_ID)'
+        # projectId: 'b13f2931-712c-4f57-b7ec-ad1e35397470'
+        projectId: '$(System.TeamProjectId)'
         pipelineId: '$(AMLPIPELINE_ID)'
         artifactBuildId: ${{ parameters.artifactBuildId }}
     - task: AzureCLI@1
