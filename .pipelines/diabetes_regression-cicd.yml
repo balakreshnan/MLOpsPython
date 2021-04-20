@@ -4,13 +4,6 @@ resources:
   containers:
   - container: mlops
     image: mcr.microsoft.com/mlops/python:latest
-  pipelines:
-  - pipeline: model-train-ci
-    source: Model-Train-Deploy # Name of the triggering pipeline
-    trigger:
-      branches:
-        include:
-        - master
 
 pr: none
 trigger:
@@ -123,8 +116,8 @@ stages:
     - download: none
     - template: diabetes_regression-get-model-id-artifact-template.yml
       parameters:
-        projectId: '$(resources.pipeline.model-train-ci.projectID)'
-        pipelineId: '$(resources.pipeline.model-train-ci.pipelineID)'
+        projectId: '$(AMLPIPELINE_ID)'
+        pipelineId: '$(AMLPIPELINE_ID)'
         artifactBuildId: ${{ parameters.artifactBuildId }}
     - task: AzureCLI@1
       displayName: 'Install AzureML CLI'
