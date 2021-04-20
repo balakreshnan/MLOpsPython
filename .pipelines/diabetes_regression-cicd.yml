@@ -92,7 +92,7 @@ stages:
       displayName: 'Invoke ML pipeline'
       inputs:
         azureSubscription: '$(WORKSPACE_SVC_CONNECTION)'
-        PipelineId: '49'
+        PipelineId: '$(AMLPIPELINE_ID)'
         ExperimentName: '$(EXPERIMENT_NAME)'
         PipelineParameters: '"ParameterAssignments": {"model_name": "$(MODEL_NAME)"}, "tags": {"BuildId": "$(Build.BuildId)", "BuildUri": "$(BUILD_URI)"}, "StepTags": {"BuildId": "$(Build.BuildId)", "BuildUri": "$(BUILD_URI)"}'
   - job: "Training_Run_Report"
@@ -119,7 +119,7 @@ stages:
         # projectId: '$(AMLPIPELINE_ID)'
         # projectId: 'b13f2931-712c-4f57-b7ec-ad1e35397470'
         projectId: '$(System.TeamProjectId)'
-        pipelineId: '$(AMLPIPELINE_ID)'
+        pipelineId: '49'
         artifactBuildId: ${{ parameters.artifactBuildId }}
     - task: AzureCLI@1
       displayName: 'Install AzureML CLI'
