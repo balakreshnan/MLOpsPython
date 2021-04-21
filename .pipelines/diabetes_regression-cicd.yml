@@ -113,7 +113,7 @@ stages:
     container: mlops
     timeoutInMinutes: 0
     steps:
-    - download: none
+    - download: current
     - script: echo $(System.TeamProjectId) # this step uses the mapped-in variable
     - script: echo $(Build.BuildId) # this step uses the mapped-in variable
     - script: echo $(parameters.artifactBuildId) # this step uses the mapped-in variable
