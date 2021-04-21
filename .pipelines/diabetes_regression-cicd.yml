@@ -125,7 +125,7 @@ stages:
         # pipelineId: '49'
         pipelineId: '$(Build.BuildId)'
         # artifactBuildId: ${{ parameters.artifactBuildId }}
-        artifactBuildId: ${{ Build.BuildId }}
+        artifactBuildId: '$(Build.BuildId)''
     - task: AzureCLI@1
       displayName: 'Install AzureML CLI'
       inputs:
