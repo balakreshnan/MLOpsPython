@@ -116,7 +116,7 @@ stages:
     - download: current
     - script: echo $(System.TeamProjectId) # this step uses the mapped-in variable
     - script: echo $(Build.BuildId) # this step uses the mapped-in variable
-    - script: echo $(parameters.artifactBuildId) # this step uses the mapped-in variable
+    # - script: echo $(parameters.artifactBuildId) # this step uses the mapped-in variable
     - template: diabetes_regression-get-model-id-artifact-template.yml
       parameters:
         # projectId: '$(AMLPIPELINE_ID)'
@@ -124,7 +124,8 @@ stages:
         projectId: '$(System.TeamProjectId)'
         # pipelineId: '49'
         pipelineId: '$(Build.BuildId)'
-        artifactBuildId: ${{ parameters.artifactBuildId }}
+        # artifactBuildId: ${{ parameters.artifactBuildId }}
+        artifactBuildId: ${{ Build.BuildId }}
     - task: AzureCLI@1
       displayName: 'Install AzureML CLI'
       inputs:
