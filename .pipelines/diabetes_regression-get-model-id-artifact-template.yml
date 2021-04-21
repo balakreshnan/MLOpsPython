@@ -13,7 +13,7 @@ parameters:
   
 steps:
   - download: none
-  - script: echo $(parameters.projectId) # this step uses the mapped-in variable
+  - script: echo $(parameters.projectId) # this step uses the mapped-in variable corrected
   - script: echo $(parameters.pipelineId) # this step uses the mapped-in variable
   - task: DownloadPipelineArtifact@2
     displayName: Download Pipeline Artifacts from template
